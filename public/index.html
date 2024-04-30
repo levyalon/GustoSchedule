@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Schedule</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      text-align: center;
+    }
+    .merged-cell {
+      background-color: rgb(171, 11, 11);
+    }
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-56nb{background-color:#c0c0c0;border-color:#fe0000;color:#333333;text-align:center;vertical-align:top}
+.tg .tg-ze71{background-color:#9b9b9b;border-color:#fe0000;color:#333333;font-family:Arial, Helvetica, sans-serif !important;
+  font-size:14px;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-dwat{background-color:#9b9b9b;border-color:#fe0000;color:#333333;text-align:center;vertical-align:top}
+
+#namesList li {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+#namesList li span {
+  margin-right: 5px;
+}
+
+#namesList li span:last-child {
+  margin-left: auto; 
+}
+
+#namesList li:hover span {
+  color: #000;
+}
+
+#namesList li span[contenteditable="true"] {
+  border-bottom: 1px dashed #aaa;
+  padding-bottom: 3px;
+}
+
+#namesList li span[contenteditable="true"]:focus {
+  border-bottom: 1px solid blue;
+}
+
+  </style>
+</head>
+<body>
+<table class="tg">
+<thead>
+  <tr id="header-row">
+    <!--th class="tg-ze71">שבת</th>
+    <th class="tg-ze71">שישי</th>
+    <th class="tg-ze71"></th>
+    <th class="tg-ze71"></th>
+    <th class="tg-ze71"></th>
+    <th class="tg-ze71"></th>
+    <th class="tg-ze71"></th>
+    <th class="tg-ze71"></th>
+    <th class="tg-dwat"></th-->
+  </tr>
+</thead>
+<tbody>
+  <tr data-shift="Morning Waitress">
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-ao2g" onclick="openNamesModal(this)"></td>
+    <td class="tg-56nb">מלצרות</td>
+    <td class="tg-56nb" rowspan="2">Morning</td>
+  </tr>
+  <tr data-shift="Morning Dispatching">
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-ao2g" onclick="openNamesModal(this)"></td>
+    <td class="tg-56nb">טלפנות</td>
+  </tr>
+  <tr data-shift="Evening Waitress">
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-ao2g" onclick="openNamesModal(this)"></td>
+    <td class="tg-56nb">מלצרות</td>
+    <td class="tg-56nb" rowspan="2">Evening</td>
+  </tr>
+  <tr data-shift="Evening Dispatching">
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-ao2g" onclick="openNamesModal(this)"></td>
+    <td class="tg-56nb">טלפנות</td>
+  </tr>
+  <tr data-shift="Reinforcement">
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-c3ow" onclick="openNamesModal(this)"></td>
+    <td class="tg-ao2g" onclick="openNamesModal(this)"></td>
+    <td class="tg-56nb">תגבור</td>
+    <td class="tg-56nb"></td>
+  </tr>
+</tbody>
+</table>
+<!-- Settings Icon -->
+<div style="text-align: right; padding: 10px;">
+  <i class="fas fa-cog" style="font-size: 24px; cursor: pointer;" onclick="openModal()"></i>
+</div>
+
+<!-- Names Selection Modal -->
+<div id="namesSelectionModal" style="display: none; position: fixed; z-index: 2; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+  <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 50%;">
+    <span onclick="closeWeeklyNamesModal()" style="float: right; cursor: pointer; color: #aaa;">&times;</span>
+    <h2>Select Names</h2>
+    <ul id="namesChecklist"></ul>
+    <button onclick="saveSelections()">Save</button>
+  </div>
+</div>
+
+
+
+<!-- Modal for Settings -->
+<div id="settingsModal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+  <div style="background-color: rgb(144, 141, 141); margin: 15% auto; padding: 20px; border: 1px solid #888; width: 30%;">
+    <span onclick="closeModal()" style="float: right; cursor: pointer; color: #aaa;">&times;</span>
+    <h2>Settings</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+</div>
+
+<!-- Names Editing Modal -->
+<!-- Names Editing Modal -->
+<div id="namesModal" style="display: none; position: fixed; z-index: 2; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+  <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 50%;">
+    <span onclick="closeNamesModal()" style="float: right; cursor: pointer; color: #aaa;">&times;</span>
+    <h2>Edit Names</h2>
+    <ul id="namesList"></ul>
+    <input type="text" id="newName" placeholder="Add new name">
+    <button onclick="addName()">Add</button>
+  </div>
+</div>
+
+
+
+  <script src="app.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+function getPreviousSunday() {
+    const today = new Date();
+    const previousSunday = new Date(today.setDate(today.getDate() - today.getDay()));
+    return previousSunday;
+  }
+
+  function addDaysToDate(start, days) {
+    const date = new Date(start.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+  }
+
+function formatDate(date) {
+    // Returns the date in ISO format (YYYY-MM-DD)
+    return date.toISOString().split('T')[0];
+}
+
+function formatDisplayDate(date) {
+    // Returns the date in "24/5" format for display
+    return `${date.getDate()}/${date.getMonth() + 1}`;
+}
+
+function generateWeekDates(start) {
+    const startDate = new Date(start);
+    let daysArray = [];
+    for (let i = 0; i < 7; i++) {
+        const date = addDaysToDate(startDate, i);
+        daysArray.push({
+            fullDate: formatDate(date),
+            displayDate: formatDisplayDate(date)
+        });
+    }
+    return daysArray;
+}
+
+function setupTableHeaders() {
+    const startDay = getPreviousSunday(); // Always starts the week on Sunday
+    const dates = generateWeekDates(startDay);
+    const headerRow = document.getElementById('header-row');
+
+    // Clear existing headers if any, except for the first one which might be a static header
+    while (headerRow.children.length > 1) {
+        headerRow.removeChild(headerRow.lastChild);
+    }
+
+    // Add new date headers
+    dates.forEach(({fullDate, displayDate}) => {
+        const th = document.createElement('th');
+        th.className = 'tg-ze71';
+        th.textContent = displayDate; // Displaying user-friendly date
+        th.setAttribute('data-date', fullDate); // Storing ISO format date
+        headerRow.appendChild(th);
+    });
+}
+
+
+  setupTableHeaders();
+  </script>
+</body>
+</html>
